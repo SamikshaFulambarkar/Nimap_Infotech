@@ -40,7 +40,7 @@ namespace Nimap_Infotech.Controllers
             var product = _context.products.Include("Category").FirstOrDefault(p => p.ProductId == id);
             if (product == null)
             {
-                return NotFound();
+                return View();
             }
             return View(product);
         }
@@ -74,7 +74,7 @@ namespace Nimap_Infotech.Controllers
             var product = _context.products.Find(id);
             if (product == null)
             {
-                return NotFound();
+                return View();
             }
             ViewBag.CategoryId = new SelectList(_context.categories, "CategoryId", "CategoryName", product.CategoryId);
             return View(product);
@@ -102,7 +102,7 @@ namespace Nimap_Infotech.Controllers
             var product = _context.products.Include("Category").FirstOrDefault(p => p.ProductId == id);
             if (product == null)
             {
-                return NotFound();
+                return View();
             }
             return View(product);
         }
