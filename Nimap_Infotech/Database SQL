@@ -1,0 +1,25 @@
+create database Nimap_Infotech_Assignment;
+use Nimap_Infotech_Assignment;
+
+CREATE TABLE [dbo].[Categories](
+    [CategoryId] [int] IDENTITY(1,1) NOT NULL,
+    [CategoryName] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_Categories] PRIMARY KEY CLUSTERED 
+(
+    [CategoryId] ASC
+))
+
+CREATE TABLE [dbo].[Products](
+    [ProductId] [int] IDENTITY(1,1) NOT NULL,
+    [ProductName] [nvarchar](50) NOT NULL,
+    [CategoryId] [int] NOT NULL,
+ CONSTRAINT [PK_Products] PRIMARY KEY CLUSTERED 
+(
+    [ProductId] ASC
+))
+
+ALTER TABLE [dbo].[Products]  WITH CHECK ADD  CONSTRAINT [FK_Products_Categories] FOREIGN KEY([CategoryId])
+REFERENCES [dbo].[Categories] ([CategoryId])
+
+select * from Categories;
+select * from Products;
