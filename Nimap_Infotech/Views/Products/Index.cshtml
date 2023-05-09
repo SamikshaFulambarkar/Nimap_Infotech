@@ -29,16 +29,10 @@
                 @Html.DisplayFor(modelItem => item.ProductName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ProductDescription)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.CategoryId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Category.CategoryName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.CategoryDescription)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |
